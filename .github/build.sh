@@ -24,7 +24,7 @@ rm -rf $BIN_PATH && mkdir -p $BIN_PATH;
 # Build the project.
 cd $BUILD_PATH;
 
-gcc -O3 -march=native -g -fpic -save-temps -Wall -Werror -pedantic-errors -o $APP_NAME $FILES_TO_COMPILE -lmatrixmath -lactivation -lm;
+gcc -O3 -march=native -g -fpic -save-temps -Wall -Werror -pedantic-errors -o $APP_NAME $FILES_TO_COMPILE;
 if [ $? -ne 0 ]
 then
   echo "Compile Failed!"
