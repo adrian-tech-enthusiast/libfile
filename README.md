@@ -27,13 +27,13 @@ its [official Github repository](https://github.com/adrian-tech-enthusiast/libfi
 
 First, confirm the latest version available in
 their [releases page](https://github.com/adrian-tech-enthusiast/libfile/releases). At the time of this writing,
-the most current stable version is `1.0.0`.
+the most current stable version is `1.0.1`.
 
-1. The following command will download the `1.0.0` release and save the shared library file at
+1. The following command will download the `1.0.1` release and save the shared library file at
    /usr/local/lib/libfile.so, which will make this library globally accessible to clients:
 
     ```bash
-    sudo curl -L "https://github.com/adrian-tech-enthusiast/libfile/releases/download/v1.0.0/libfile.so" -o /usr/local/lib/libfile.so
+    sudo curl -L "https://github.com/adrian-tech-enthusiast/libfile/releases/download/v1.0.1/libfile.so" -o /usr/local/lib/libfile.so
     ```
 
 2. Next, We need to tell the loader it is available for use, so let us update the cache, invoke the `ldconfig` utility,
@@ -55,7 +55,7 @@ the most current stable version is `1.0.0`.
    Typical locations are `/usr/include` and `/usr/local/include`;
 
     ```bash
-    sudo curl -L "https://raw.githubusercontent.com/adrian-tech-enthusiast/libfile/v1.0.0/include/filehelper.h" -o /usr/local/include/filehelper.h;
+    sudo curl -L "https://raw.githubusercontent.com/adrian-tech-enthusiast/libfile/v1.0.1/include/filehelper.h" -o /usr/local/include/filehelper.h;
     ```
 
    This allows the library header file to be included in your C project as follows:
@@ -71,15 +71,15 @@ the most current stable version is `1.0.0`.
    your C project:
 
     ```bash
-    gcc -o tester tester.c -lactivation
+    gcc -o my_program my_program.c -lfile
     ```
 
 ### Example Usage
 
-#### Example 1: Writing to a File
+##### Example 1: Writing to a File
 
 ```c
-#include "file_put_contents.h"
+#include <filehelper.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -97,10 +97,10 @@ int main() {
 }
 ```
 
-#### Example 2: Reading from a File
+##### Example 2: Reading from a File
 
 ```c
-#include "file_get_contents.h"
+#include <filehelper.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -120,7 +120,7 @@ int main() {
 }
 ```
 
-#### Compiling the Code
+##### Compiling the Code
 
 To compile your program, you might use a command like this, depending on your setup:
 
